@@ -1,0 +1,7 @@
+name: LG-UHC
+main: com.niron.lgUhc.LgUHC
+version: 1.0
+api-version: 1.8.8
+commands:
+  lg:
+    description: "Commande principal du loup garou"

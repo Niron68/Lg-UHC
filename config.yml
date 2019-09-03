@@ -1,0 +1,358 @@
+diamondLimit: true
+diamondLimitSize: 17
+nbPlayer: 2
+
+map:
+  seed:
+    - 602508205877868616
+    - 953345951420268319
+    - -988287890402433168
+    - 587683470438333994
+    - 261291181848099343
+    - 102053553270807709
+    - -707587947078240520
+    - -760145950028790160
+    - -360023082221264712
+    - -18695171054407889
+    - -604380788781487121
+    - 478053966629879099
+    - 545515447186541606
+
+roles:
+
+  base:
+    name: "Base"
+    item:
+      iron_pickaxe:
+        name: "IRON_PICKAXE"
+        enchant:
+          - "DIG_SPEED"
+          - "DURABILITY"
+        enchantlevel: 
+          - 3
+          - 800
+        quantity: 1
+      iron_axe:
+        name: "IRON_AXE"
+        enchant:
+          - "DIG_SPEED"
+        enchantlevel:
+          - 3
+        quantity: 1
+      iron_spade:
+        name: "IRON_SPADE"
+        enchant:
+          - "DIG_SPEED"
+          - "DURABILITY"
+        enchantlevel:
+          - 3
+          - 800
+        quantity: 1
+      apple:
+        name: "APPLE"
+        enchant:
+        enchantlevel:
+        quantity: 5
+      book:
+        name: "BOOK"
+        enchant:
+        enchantlevel:
+        quantity: 3
+      cooked_beef:
+        name: "COOKED_BEEF"
+        enchant:
+        enchantlevel:
+        quantity: 64
+      log:
+        name: "LOG"
+        enchant:
+        enchantlevel:
+        quantity: 128
+      #log:
+        #name: "LOG"
+        #enchant:
+        #enchantlevel:
+        #quantity: 64
+      water_bucket:
+        name: "WATER_BUCKET"
+        enchant:
+        enchantlevel:
+        quantity: 1
+      
+      
+  assassin:
+    name: "Assassin"
+    day_effect:
+      - "INCREASE_DAMAGE"
+    day_effectlevel:
+      - 1
+    item:
+      enchantedbook_sharpness:
+        name: "ENCHANTED_BOOK"
+        enchant:
+          - "DAMAGE_ALL"
+        enchantlevel:
+          - 3
+        quantity: 1
+      enchantedbook_power:
+        name: "ENCHANTED_BOOK"
+        enchant:
+          - "ARROW_DAMAGE"
+        enchantlevel:
+          - 3
+        quantity: 1
+      enchantedbook_protection:
+        name: "ENCHANTED_BOOK"
+        enchant:
+          - "PROTECTION_ENVIRONMENTAL"
+        enchantlevel:
+          - 3
+        quantity: 1
+      
+      
+  hunter:
+    name: "Chasseur"
+    item:
+      bow_hunter:
+        name: "BOW"
+        enchant:
+        enchantlevel:
+        quantity: 1
+      enchantedbook_power_hunter:
+        name: "ENCHANTED_BOOK"
+        enchant:
+          - "ARROW_DAMAGE"
+        enchantlevel: 
+          - 4
+        quantity: 1
+      arrow:
+        name: "ARROW"
+        enchant:
+        enchantlevel:
+        quantity: 128
+      
+      
+  little_girl:
+    name: "Petite fille"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    night_effect:
+      - "INVISIBILTY"
+      - "WEAKNESS"
+    night_effectlevel:
+      - 1
+      - 1
+    item:
+      tnt:
+        name: "TNT"
+        enchant:
+        enchantlevel:
+        quantity: 5
+      
+      
+  seer:
+    name: "Voyante"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    item:
+      bookshelf:
+        name: "BOOKSHELF"
+        enchant:
+        enchantlevel:
+        quantity: 4
+      obsidian:
+        name: "OBSIDIAN"
+        enchant:
+        enchantlevel:   
+        quantity: 4
+      
+      
+  cupidon:
+    name: "Cupidon"
+    item:
+      enchantedbook_punch_cupid:
+       name: "ENCHANTED_BOOK"
+       enchant: 
+          - "ARROW_KNOCKBACK"
+       enchantlevel:
+          - 1
+       quantity: 1
+      bow:
+        name: "BOW"
+        enchant:
+        enchantlevel:
+        quantity: 1
+      arrow:
+        name: "ARROW"
+        
+        enchant:
+        enchantlevel:
+        quantity: 64
+      
+      
+  witch:
+    name: "Sorcière"
+  
+  salvateur:
+    name: "Salvateur"
+      
+  bear:
+    name: "Montreur d'Ours"
+      
+  
+  fox:
+    name: "Renard"
+    effect:
+      - "SPEED"
+    effectlevel:
+      - 1
+    
+    
+  trublion:
+    name: "Trublion"
+    
+    
+  soeurs:
+    name: "Soeurs"
+    effect:
+      - "DAMAGE_RESISTANCE"
+    effectlevel:
+      - 1
+  
+  
+  ancien:
+    name: "Ancien"
+    effect:
+      - "DAMAGE_RESISTANCE"
+    effectlevel:
+    
+      - 1
+  
+  
+  angel:
+    name: "Ange"
+    
+    
+  citoyen:
+    name: "Citoyen"
+    
+    
+  chaman:
+    name: "Chaman"
+  
+  
+  villager:
+    name: "Simple Villageois"
+  
+  
+  werewolf:
+    name: "Loup-Garou"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    night_effect:
+      - "INCREASE_DAMAGE"
+    night_effectlevel:
+      - 1
+      
+      
+  werewolfB:
+    name: "Loup-Garou Blanc"
+    effect:
+      - "NIGHT_VISION"
+      - "HEALTH_BOOST"
+    effectlevel:
+      - 1
+      - 10
+    night_effect:
+      - "INCREASE_DAMAGE"
+    night_effectlevel:
+      - 1
+      
+      
+  werewolfF:
+    name: "Infect Père des Loups"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    night_effect:
+      - "INCREASE_DAMAGE"
+    night_effectlevel:
+      - 1
+      
+      
+  werewolfA:
+    name: "Loup-Garou Amnésique"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    night_effect:
+      - "INCREASE_DAMAGE"
+    night_effectlevel:
+      - 1
+      
+      
+  werewolfV:
+    name: "Vilain Petit Loup"
+    effect:
+      - "NIGHT_VISION"
+    effectlevel:
+      - 1
+    night_effect:
+      - "INCREASE_DAMAGE"
+    night_effectlevel:
+      - 1
+      
+      
+  sauvage:
+    name: "Enfant Sauvage"
+    day_effect:
+      - "INCREASE_DAMAGE"
+    day_effectlevel:
+      - 1
+    
+  voleur:
+    name: "Voleur"
+      
+role_priority:
+  - "werewolf"
+  - "werewolf"
+  - "werewolf"
+  - "sauvage"
+  - "werewolfB"
+  - "seer"
+  - "witch"
+  - "fox"
+  - "cupidon"
+  - "bear"
+  - "angel"
+  - "little_girl"
+  - "salvateur"
+  - "assassin"
+  - "voleur"
+  - "werewolf"
+  - "hunter"
+  - "citoyen"
+  - "ancien"
+  - "werewolfF"
+  - "trublion"
+  - "villager"
+  - "werewolfV"
+  - "villager"
+  - "werewolfA"
+  - "soeurs"
+  - "soeurs"
+  - "werewolf" 
+  
+
+
+
+
+
