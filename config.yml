@@ -139,7 +139,7 @@ roles:
     effectlevel:
       - 1
     night_effect:
-      - "INVISIBILTY"
+      - "INVISIBILITY"
       - "WEAKNESS"
     night_effectlevel:
       - 1
