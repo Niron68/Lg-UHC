@@ -36,11 +36,11 @@ public class CommandsLg implements CommandExecutor {
 		
 		if (args[0].equalsIgnoreCase("getrole")){
 			Bukkit.broadcastMessage("test getRole");
-			System.out.println(lg.game.getPlayer((Player)sender) == null);
-			System.out.println(lg.game.getPlayer((Player)sender).role == null);
-			System.out.println(lg.game.getPlayer((Player)sender).role.rolename == null);
-			System.out.println(lg.game.getPlayer((Player)sender).role.name == null);
-			//Bukkit.broadcastMessage(lg.game.getPlayer((Player)sender).role.name);
+			//System.out.println(lg.game.getPlayer((Player)sender) == null);
+			//System.out.println(lg.game.getPlayer((Player)sender).role == null);
+			//System.out.println(lg.game.getPlayer((Player)sender).role.rolename == null);
+			//System.out.println(lg.game.getPlayer((Player)sender).role.name == null);
+			Bukkit.broadcastMessage(lg.game.getPlayer((Player)sender).role.name);
 		}
 		
 		
