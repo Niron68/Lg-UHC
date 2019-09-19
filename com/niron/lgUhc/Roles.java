@@ -30,7 +30,8 @@ public class Roles {
 			List<String> effectName = lg.getConfig().getStringList("roles." + rolename + ".effect");
 			List<Integer> effectLevel = lg.getConfig().getIntegerList("roles." + rolename + ".effectlevel");
 			for(int i = 0; i < effectName.size(); i++) {
-				this.effectList.add(PotionEffectType.getByName(effectName.get(i)).createEffect(Integer.MAX_VALUE, effectLevel.get(i)));
+				//this.effectList.add(PotionEffectType.getByName(effectName.get(i)).createEffect(Integer.MAX_VALUE, effectLevel.get(i)));
+				this.effectList.add(new PotionEffect(PotionEffectType.getByName(effectName.get(i)), Integer.MAX_VALUE, effectLevel.get(i)-1, false, false));
 			}
 		}
 		
@@ -42,7 +43,7 @@ public class Roles {
 			for(int i = 0; i < nighteffectName.size(); i++) {
 				System.out.println(nighteffectName.get(i));
 				System.out.println(nighteffectLevel.get(i));
-				this.nighteffectList.add(PotionEffectType.getByName(nighteffectName.get(i)).createEffect(Integer.MAX_VALUE, nighteffectLevel.get(i)));
+				this.nighteffectList.add(new PotionEffect(PotionEffectType.getByName(nighteffectName.get(i)), Integer.MAX_VALUE, nighteffectLevel.get(i)-1, false, false));
 			}
 		}
 		
@@ -50,7 +51,7 @@ public class Roles {
 			List<String> dayeffectName = lg.getConfig().getStringList("roles." + rolename + ".day_effect");
 			List<Integer> dayeffectLevel = lg.getConfig().getIntegerList("roles." + rolename + ".day_effectlevel");
 			for(int i = 0; i < dayeffectName.size(); i++) {
-				this.dayeffectList.add(PotionEffectType.getByName(dayeffectName.get(i)).createEffect(Integer.MAX_VALUE, dayeffectLevel.get(i)));
+				this.dayeffectList.add(new PotionEffect(PotionEffectType.getByName(dayeffectName.get(i)), Integer.MAX_VALUE, dayeffectLevel.get(i)-1, false, false));
 			}
 		}
 	}

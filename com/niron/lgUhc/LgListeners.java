@@ -18,6 +18,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
 
 public class LgListeners implements Listener {
 
@@ -58,6 +59,9 @@ public class LgListeners implements Listener {
 		World overworld = Bukkit.getWorlds().get(0);
 		Location spawn = new Location(overworld, overworld.getSpawnLocation().getX(), overworld.getSpawnLocation().getY() + 10, overworld.getSpawnLocation().getZ());
 		Player player = event.getPlayer();
+		for(PotionEffect potion : player.getActivePotionEffects()) {
+			player.removePotionEffect(potion.getType());
+		}
 		lg.playerList.add(new LgPlayer(player));
 		player.sendMessage("§aBienvenue !");
 		if(!lg.start) {
