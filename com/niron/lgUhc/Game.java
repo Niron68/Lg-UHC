@@ -100,8 +100,8 @@ public class Game {
 	public void createWorld() {
 		this.world = lg.getServer().getWorld("lg");
 		Bukkit.unloadWorld(world, false);
-		System.out.println(world == null);
-		System.out.println(world.getWorldFolder() == null);
+		//System.out.println(world == null);
+		//System.out.println(world.getWorldFolder() == null);
 		if(world != null && world.getWorldFolder() != null)
 			System.out.println("Monde supprime : " + deleteFolder(world.getWorldFolder()));
 		this.seedList = lg.getConfig().getLongList("map.seed");
