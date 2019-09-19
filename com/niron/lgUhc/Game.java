@@ -25,7 +25,7 @@ public class Game {
 	private static Random random = new Random();
 	public boolean start;
 	private LgUHC lg;
-	private List<LgPlayer> playerList;
+	public List<LgPlayer> playerList;
 	private WorldCreator worldCreator = new WorldCreator("lg");
 	public World world;
 	public WorldBorder wb;

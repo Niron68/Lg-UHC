@@ -1,2 +1,9 @@
+/.classpath
+/.metadata/
+/.project
+/.settings/
 /com/
 /commands/
+/config.yml
+/plugin.yml
+/spigot-api-1.8.8-R0.1-SNAPSHOT-shaded.jar

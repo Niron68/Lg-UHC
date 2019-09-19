@@ -1,10 +1,12 @@
 package com.niron.lgUhc;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.entity.Player;
 
 import commands.CommandsLg;
 
@@ -24,10 +26,15 @@ public class LgUHC extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
-		game = new Game(this);
-		this.start = game.start;
+		this.game = new Game(this);
+		this.start = this.game.start;
 		getServer().getPluginManager().registerEvents(new LgListeners(this), this);
 		getCommand("lg").setExecutor(new CommandsLg(this));
+		
+		Collection<? extends Player> players = Bukkit.getOnlinePlayers();
+		for(Player player : players) {
+			this.game.playerList.add(new LgPlayer(player));
+		}
 		
 		Bukkit.getScheduler().runTaskTimer(this, new BukkitRunnable() {
 
@@ -35,7 +42,7 @@ public class LgUHC extends JavaPlugin {
 			public void run() {
 				
 				if(!start) {
-					if(nbPret >= getConfig().getInt("nbPlayer")) {
+					if(nbPret >= getConfig().getInt("nbPlayeumlr")) {
 						Bukkit.broadcastMessage("§2La partie commence dans " + count);
 						count--;
 						if(count == 0) {
