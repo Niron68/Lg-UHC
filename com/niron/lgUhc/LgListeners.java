@@ -39,7 +39,7 @@ public class LgListeners implements Listener {
 			if(block.getType() == Material.DIAMOND_ORE) {
 				if(lg.getConfig().getBoolean("diamondLimit")) {
 					if(lgPlayer.diamondLimit == lg.getConfig().getInt("diamondLimitSize")) {
-						player.sendMessage("Â§cVous ne pouvez pas miner plus de " + lg.getConfig().getInt("diamondLimitSize") + " diamants");
+						player.sendMessage("§cVous ne pouvez pas miner plus de " + lg.getConfig().getInt("diamondLimitSize") + " diamants");
 						event.setCancelled(true);
 					}else {
 						lgPlayer.diamondLimit++;
@@ -48,7 +48,7 @@ public class LgListeners implements Listener {
 			}
 		}else {
 			event.setCancelled(true);
-			player.sendMessage("Â§cVous ne pouvez pas casser de block tant que la partie n'a pas commencÃ©");
+			player.sendMessage("§cVous ne pouvez pas casser de block tant que la partie n'a pas commencÃ©");
 		}
 		
 	}
@@ -59,12 +59,12 @@ public class LgListeners implements Listener {
 		Location spawn = new Location(overworld, overworld.getSpawnLocation().getX(), overworld.getSpawnLocation().getY() + 10, overworld.getSpawnLocation().getZ());
 		Player player = event.getPlayer();
 		lg.playerList.add(new LgPlayer(player));
-		player.sendMessage("Â§aBienvenue !");
+		player.sendMessage("§aBienvenue !");
 		if(!lg.start) {
 			player.teleport(spawn);
 			player.setGameMode(GameMode.SURVIVAL);
 			player.getInventory().clear();
-			player.getInventory().setItem(8, createItem(Material.COMPASS, "Â§5Menu"));
+			player.getInventory().setItem(8, createItem(Material.COMPASS, "§5Menu"));
 			player.updateInventory();
 		}
 	}
@@ -85,11 +85,11 @@ public class LgListeners implements Listener {
 		
 		if(item == null) return;
 		
-		if(item.getType() == Material.COMPASS && item.hasItemMeta() && item.getItemMeta().hasDisplayName() && item.getItemMeta().getDisplayName().equals("Â§5Menu")) {
-			Inventory inv = Bukkit.createInventory(null, 27, "Â§8Menu");
+		if(item.getType() == Material.COMPASS && item.hasItemMeta() && item.getItemMeta().hasDisplayName() && item.getItemMeta().getDisplayName().equals("§5Menu")) {
+			Inventory inv = Bukkit.createInventory(null, 27, "§8Menu");
 			
-			inv.setItem(11, createItem(Material.EMERALD_BLOCK, "Â§aPret"));
-			inv.setItem(15, createItem(Material.REDSTONE_BLOCK, "Â§cAnnuler"));
+			inv.setItem(11, createItem(Material.EMERALD_BLOCK, "§aPret"));
+			inv.setItem(15, createItem(Material.REDSTONE_BLOCK, "§cAnnuler"));
 			
 			player.openInventory(inv);
 		}
@@ -110,17 +110,17 @@ public class LgListeners implements Listener {
 		if(!lg.start) {
 			event.setCancelled(true);
 			
-			if(inv.getName().equalsIgnoreCase("Â§8Menu")) {
+			if(inv.getName().equalsIgnoreCase("§8Menu")) {
 				if(current.getType() == Material.EMERALD_BLOCK) {
 					player.closeInventory();
 					if(!lgPlayer.isReady) lg.nbPret++;
 					lgPlayer.isReady = true;
-					Bukkit.broadcastMessage("Â§a" + player.getName() + " est prÃªt ! (" + lg.nbPret + "/" + lg.getConfig().getInt("nbPlayer") + ")");
+					Bukkit.broadcastMessage("§a" + player.getName() + " est prêt ! (" + lg.nbPret + "/" + lg.getConfig().getInt("nbPlayer") + ")");
 				}else if(current.getType() == Material.REDSTONE_BLOCK) {
 					player.closeInventory();
 					if(lgPlayer.isReady) lg.nbPret--;
 					lgPlayer.isReady = false;
-					Bukkit.broadcastMessage("Â§c" + player.getName() + " n'est plus prÃªt ! (" + lg.nbPret + "/" + lg.getConfig().getInt("nbPlayer") + ")");
+					Bukkit.broadcastMessage("§c" + player.getName() + " n'est plus prêt ! (" + lg.nbPret + "/" + lg.getConfig().getInt("nbPlayer") + ")");
 				}
 			}
 		}

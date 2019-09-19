@@ -26,8 +26,8 @@ public class LgUHC extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
-		this.game = new Game(this);
-		this.start = this.game.start;
+		game = new Game(this);
+		this.start = game.start;
 		getServer().getPluginManager().registerEvents(new LgListeners(this), this);
 		getCommand("lg").setExecutor(new CommandsLg(this));
 		
@@ -42,14 +42,14 @@ public class LgUHC extends JavaPlugin {
 			public void run() {
 				
 				if(!start) {
-					if(nbPret >= getConfig().getInt("nbPlayeumlr")) {
-						Bukkit.broadcastMessage("Â§2La partie commence dans " + count);
+					if(nbPret >= getConfig().getInt("nbPlayer")) {
+						Bukkit.broadcastMessage("§2La partie commence dans " + count);
 						count--;
 						if(count == 0) {
 							game.startGame();
 						}
 					}else if(count != 10) {
-						Bukkit.broadcastMessage("Â§cPartie annulÃ© !");
+						Bukkit.broadcastMessage("§cPartie annulé !");
 						count = 10;
 					}
 				}else {
@@ -60,7 +60,7 @@ public class LgUHC extends JavaPlugin {
 						game.setRole();
 						role = true;
 					}else if(timer == 100*60){
-						//DÃ©but du retrecissement de la border
+						//Début du retrecissement de la border
 						retrecir = true;
 					}
 					
