@@ -75,7 +75,7 @@ public class Roles {
 		if(loup.contains(this.rolename)) {
 			if(lg.game.lastKiller != null && loup.contains(lg.game.lastKiller.role.rolename)) {
 				player.addPotionEffect(PotionEffectType.getByName("SPEED").createEffect(120, 1));
-				player.addPotionEffect(PotionEffectType.getByName("ABSOORPTION").createEffect(120, 6));
+				player.addPotionEffect(PotionEffectType.getByName("ABSORPTION").createEffect(120, 6));
 			}
 		}
 	}
